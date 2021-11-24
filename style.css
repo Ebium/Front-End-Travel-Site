@@ -1,0 +1,491 @@
+:root{
+  --color: #ff8800;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+  border-radius: 2px;
+}
+
+#graphic {
+  background-image: url("https://i.ibb.co/2SWWyPH/sky-blue.jpg");
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+/*----------------------buttons ------------------------*/
+.nav, .Validate {
+  padding: 10px 25px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgba(245, 245, 220, 0.411);
+  z-index: 1;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.Validate{
+  background-color: var(--color);
+}
+
+.Validate:hover, .nav:hover {
+  color: rgb(0, 0, 0);
+  filter:brightness(125%)
+}
+
+
+/*------------------------------------------------------------------*/
+
+
+input{
+  box-shadow: 0 0 6px rgba(0,0,0,.1607843137254902);
+  padding-left: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  z-index: 1;
+  color: rgb(0, 0, 0);
+}
+ul { list-style: none; margin: 0; padding: 0;
+}
+
+li.side{
+  padding-top: 20px;
+}
+  
+  #parent{
+    position: relative;
+    float: left;
+    height: 100vh;
+    width: 300px;
+    background-color: #0063dc9c;
+    border-left:1px solid rgba(255, 255, 255, 0.664);
+    border-right:1px solid rgba(255, 255, 255, 0.664);
+ 
+  }
+
+  .topline{
+    display: inline-block;
+  }
+  
+  #logo{
+    position: absolute;
+    height: 105px;
+    width: 105px;
+    top: 0;
+  }
+  
+  #nameoflogo{
+    position: relative;
+    font-size: 60px;
+    color: aliceblue;
+    top : 15px;
+    left : 110px;
+  }
+  
+  #logodesc{
+    position: relative;
+    left: 126px;
+    font-size: 18px;
+    color: aliceblue;
+    font-style: italic;
+  }
+
+  #child2 {
+    padding:15px;
+  }
+
+  #formtitle{
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+
+  #inscription{
+    border: rgb(255, 255, 255);
+    border-style: solid;
+    padding: 10px;
+    background-color: rgba(245, 245, 220, 0.411);
+  }
+
+  #child3 {
+    position: relative;
+    border-top: 4px solid wheat;
+    padding-top: 5px;
+    padding-left: 20%;
+  }
+
+  #menutitle{
+    position: relative;
+    left:-46px;
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 30px;
+  }
+
+/*----------------------buttons nav------------------------*/
+
+#recherche{
+  padding: 5px;
+}
+
+#liste_carte{
+  display:none;
+}
+
+#dc{
+  background-color: var(--color);
+}
+
+#df{
+  background-color: rgba(127, 255, 212, 0.459);
+}
+
+#pub{
+  background-color: #82caadd7;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+/*----------------------------------------------------------*/
+
+
+/*----------------------Affichage Liste ------------------------*/
+
+
+.box {
+  display: inline-block;
+}
+
+
+#listetrip{
+  position: relative;
+  display: flex;
+  left: 237px;
+  height: 84vh;
+  width: 95vh;
+  background-color: #075bc246;
+  border-left:1px solid rgba(255, 255, 255, 0.664);
+  border-right:1px solid rgba(255, 255, 255, 0.664);
+  padding-top: 150px;
+  padding-left: 95px;
+  padding-right: 95px;
+}
+
+#destintitle{
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 35px;
+}
+
+
+#resrecherche{
+  position: absolute;
+  left: 30px;
+  top: 120px;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 25px;
+}
+
+#resnull{
+  position: absolute;
+  color: white;
+  left: 30px;
+  top: 120px;
+  font-size: 25px;  
+}
+
+
+.affiche {
+	width: 270px;
+	height: 540px;
+	position: relative;
+	margin: 0 20px;
+  z-index: 0;
+}
+
+.affiche_image {
+	width: 230px;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	z-index: 9999;
+}
+
+.poster {
+	width: 100%;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+}
+
+.content1 {
+	background: #fff;
+	width: 270px;
+	height: 520px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	position: absolute;
+	top: 20px;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+	opacity: 0;
+}
+
+.affiche:hover .content1 {
+	opacity: 1;
+	animation: bounceIn 0.6s linear;
+}
+
+@keyframes bounceIn {
+	0%,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, 0.3, 0.3);
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+		-webkit-transform: scale3d(1.03, 1.03, 1.03);
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+	40% {
+		-webkit-transform: scale3d(0.9, 0.9, 0.9);
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: scale3d(1.01, 1.01, 1.01);
+		transform: scale3d(1.01, 1.01, 1.01);
+	}
+	80% {
+		-webkit-transform: scale3d(0.97, 0.97, 0.97);
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+}
+
+
+.content2 {
+	width: 100%;
+	position: absolute;
+	bottom: -20px;
+	text-align: center;
+}
+
+.destination {
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.slogan {
+	color: #999;
+	font-size: 0.9rem;
+	margin-bottom: 20px;
+}
+
+.prix {
+	color: var(--color);
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+.ancien_prix {
+	color: #999;
+	text-decoration: line-through;
+	margin-bottom: 10px;
+}
+
+.tarif_check {
+	cursor: pointer;
+	width: 100%;
+	background: var(--color);
+	color: white;
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+
+
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+
+
+.modal-content {
+  background-color: #ff8800d8;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid rgba(136, 136, 136, 0.144);
+  height: 300px;
+  border-radius: 10px;
+  width: 1770px; 
+}
+
+.close {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*----------------------------------EVENTS-----------------------------------*/
+
+.hide{
+  visibility:hidden;
+}
+
+.pad{
+  position: absolute;
+}
+
+/*---------------------------------------MODAL TAB----------------------------------*/
+
+table{
+  position: relative;
+  top: 73px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th{
+  color: rgba(255, 255, 255, 0.89);
+  border-right: 1px solid rgb(255, 255, 255);
+  border-left: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
+td{
+  color: rgba(255, 255, 255, 0.774);
+  border-right: 1px solid rgb(255, 255, 255);
+  border-left: 1px solid rgb(255, 255, 255);
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#reservation{
+  position: absolute;
+  background-color: #82caadd7;
+  right:100px;
+  bottom:385px;
+  font-weight: 700;
+
+}
+
+
+
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  bottom:-125px;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+} 
+
+
+#topbar{
+  z-index: 0;
+  position: absolute;
+  background-color: rgb(72, 88, 233);
+  height: 110px;
+  width: 100%;
+}
+
+#bottombar{
+  z-index: 0;
+  position: absolute;
+  background-color: rgb(72, 88, 233);
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+}
+
+

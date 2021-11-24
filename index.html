@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>VMV - Voyage de luxe</title>
+</head>
+
+<body id="graphic">
+    <div id="topbar"></div>
+    <div id="bottombar"></div>
+    <div id="parent" class="box">
+        <div id="child1">
+            <div class="topline">
+                <img id="logo" src="https://i.ibb.co/5KHXh01/logo.png" height="75px" width="75px">
+            </div>
+            <div class="topline" id="nameoflogo">
+                <p>VMV</p>
+            </div>
+            <div>
+                <p id="logodesc">ViteMonVol</p>
+            </div>
+        </div>
+        <div id="child2">
+            <div>
+                <p id="formtitle">Inscription</p>
+            </div>
+            <form>
+                <ul id="inscription">
+                    <li> <input type="text" placeholder="Nom" required></li><br>
+                    <li> <input type="text" placeholder="Prénom" required></li><br>
+                    <li> <input type="text" placeholder="Email" required></li><br>
+                    <li> <input type="password" id="mdp" minlength="6" maxlength="35" placeholder="Mot de passe"
+                            required><br><br></li>
+                    <button type="submit" class="Validate"> Valider </button>
+                </ul>
+            </form>
+        </div>
+        <div id="child3">
+            <p id="menutitle">Menu</p>
+            <ul id="dashboard">
+                <li class="side"><input onkeyup="listFilter()" type="text" placeholder="Rechercher" id="recherche"
+                        onblur="clearText()" required></li>
+                <li class="side"><button class="nav" id="anpm">À ne pas manquer !</button></li>
+                <li class="side"><button class="nav" id="dc">Destinations chaudes</button></li>
+                <li class="side"><button class="nav" id="df">Destinations fraiches</button></li>
+                <li class="side"><button class="nav" id="vg">Vue globale</button></li>
+                <li class="side"><button class="nav">Voyage de nuit</button></li>
+                <li class="side"><a target="_blank" href="https://twitter.com/Aisudaga"><button class="nav"
+                            id="pub">Publicité</button></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="listetrip" class="box">
+
+        <ul id="liste_carte">
+            <li>archipel nippon Japon</li>
+            <li>historique en grèce</li>
+            <li>caribous canada</li>
+        </ul>
+
+        <p id="destintitle">Destinations</p><br>
+        <p id="resrecherche">Résultat(s) de la recherche</p>
+        <p id="resnull">Aucun résultat pour cette recherche</p>
+
+        <div class="affiche" id="carte1">
+            <div class="affiche_image">
+                <img src="https://i.ibb.co/mh6MS4L/nippon.jpg" class="poster" />
+            </div>
+            <div class="content1">
+                <div class="content2">
+                    <h4 class="destination">Archipel Nippon</h4>
+                    <p class="slogan">Venez décourir les dragons du japon !</p>
+                    <p class="prix">Dès 2 500 €</p>
+                    <p class="ancien_prix">2.99 €</p>
+                    <button class="tarif_check">Voir les tarifs</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="affiche" id="carte2">
+            <div class="affiche_image">
+                <img src="https://i.ibb.co/VV3sRTq/grece.jpg" class="poster" />
+            </div>
+            <div class="content1">
+                <div class="content2">
+                    <h4 class="ticket__movie-title">Grèce</h4>
+                    <p class="slogan">Un mélange de couleur incroyable !</p>
+                    <p class="prix">Dès 1 000 €</p>
+                    <p class="ancien_prix">1399 €</p>
+                    <button class="tarif_check">Voir les tarifs</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="affiche" id="carte3">
+            <div class="affiche_image">
+                <img src="https://i.ibb.co/gRHpXmq/caribou.jpg" class="poster" />
+            </div>
+            <div class="content1">
+                <div class="content2">
+                    <h4 class="ticket__movie-title">Canada</h4>
+                    <p class="slogan">Une bouffée d'air frais !</p>
+                    <p class="prix">Dès 3 000 €</p>
+                    <p class="ancien_prix">60 €</p>
+                    <button class="tarif_check">Voir les tarifs</button>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <div id="my_modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <div>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom du circuit</th>
+                                    <th>Date de début</th>
+                                    <th>Date de fin</th>
+                                    <th>Escales</th>
+                                    <th>Hôtels d'escale</th>
+                                    <th>Présentation</th>
+                                    <th>Nombre de places</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody id="circuit1">
+                                <tr>
+                                    <td>Voyage sur l'archipon nippon</td>
+                                    <td>04/15/2022</td>
+                                    <td>30/04/2022</td>
+                                    <td>Tokyo, Hakone, Kyoto, Osaka</td>
+                                    <td>Asakusa, Hakone Yutowa, Shinmachi Bettei, Nest Hotel Osaka Umeda</td>
+                                    <td>Venez visiter les villes les plus emblématiques du Japon, pays entre tradition
+                                        et modernité, durant ce voyage, vous pourrez visiter des temples comme le fameux
+                                        centre commercial Pokemon, puis descendrez vers des petits villages de campagne,
+                                        pour visiter le Mont Fuji, et bien plus encore!</td>
+                                    <td>30</td>
+                                    <td>2500</td>
+                                </tr>
+                            </tbody>
+
+
+                            <tbody id="circuit2">
+                                <tr>
+                                    <td>Visite historique en Grèce</td>
+                                    <td>09/01/2022</td>
+                                    <td>09/15/2022</td>
+                                    <td>Athènes, Le péloponnèse, Thessalonique</td>
+                                    <td>Candia hotel, Nikki Beach Resort& Spa, Electra PalaceThessaloniki</td>
+                                    <td>Venez participer a notre circuit sur l'histoire de la grèce, la mythologie Grec,
+                                        son évolution au fil des années, ses traditions, ses spécialités culinaire, le
+                                        tout saupoudré de baignade dans la mer méditerranée.</td>
+                                    <td>20</td>
+                                    <td>1000</td>
+                                </tr>
+                            </tbody>
+
+
+                            <tbody id="circuit3">
+                                <tr>
+                                    <td>Voyage au pays des caribous</td>
+                                    <td>07/01/2022</td>
+                                    <td>07/10/2022</td>
+                                    <td>Vancouver, Kamloops, Vancouver</td>
+                                    <td>Moda Hotel,
+                                        The Plaza Hotel</td>
+                                    <td>Prenez place ! Destination le Canada, Vous pourrez visité les refuges pour
+                                        animaux, la production d'érable dans une usine spécialisé,
+                                        dégustation de produits locaux. Et encore plein d'autres activitées vous
+                                        attendes !</td>
+                                    <td>25 </td>
+                                    <td>3000</td>
+                                </tr>
+                            </tbody>
+
+
+                        </table>
+                    </div>
+
+                </div>
+                <div>
+                    <button class="Validate" id="reservation"> Réserver maintenant </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- The social media icon bar -->
+    <div class="icon-bar">
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="google"><i class="fa fa-google"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+    </div>
+    <script>
+
+
+
+
+
+        const buttons = document.getElementsByClassName("tarif_check");
+        var modal = document.getElementById("my_modal");
+        var span = document.getElementsByClassName("close")[0];
+
+        var bt_dc = document.getElementById("dc");
+        var bt_df = document.getElementById("df");
+        var bt_anpm = document.getElementById("anpm");
+        var bt_vg = document.getElementById("vg");
+
+        var carte1 = document.getElementById("carte1");
+        var carte2 = document.getElementById("carte2");
+        var carte3 = document.getElementById("carte3");
+
+        var recherche = document.getElementById("resrecherche");
+
+        document.getElementById("listetrip").style.padding = "150px 95px 0px 95px";
+        document.getElementById("listetrip").style.height = "84vh";
+        document.getElementById("resnull").style.padding = "150px 15px 0px 95px";
+        recherche.classList.add("hide");
+        document.getElementById("resnull").style.visibility = "hidden";
+
+
+        /*--------------------------RECHERCHE-------------------------*/
+
+
+
+
+        var listFilter = function () {
+            var search = document.getElementById("recherche").value.toLowerCase();
+            var cartes = document.getElementById("liste_carte").getElementsByTagName("li");
+            var liste_cartes = document.getElementsByClassName("affiche");
+            var resnul = [0, 0, 0];
+            recherche.classList.remove("hide");
+            document.getElementById("listetrip").style.padding = "200px 95px 0px 95px";
+            document.getElementById("listetrip").style.height = "78.8vh";
+
+            if (!search) {
+                recherche.classList.add("hide");
+                document.getElementById("listetrip").style.padding = "150px 95px 0px 95px";
+                document.getElementById("listetrip").style.height = "84vh";
+            }
+
+            for (i = 0; i < cartes.length; i++) {
+                if (!cartes[i].innerHTML.toLowerCase().includes(search)) {
+                    liste_cartes[i].classList.add("hide");
+                    liste_cartes[i].classList.add("pad");
+                    resnul[i] = 1;
+                } else {
+                    liste_cartes[i].classList.remove("hide");
+                    liste_cartes[i].classList.remove("pad");
+                    resnul[i] = 0;
+                }
+
+            }
+            var res = 0;
+            for (j = 0; j < resnul.length; j++) {
+                res += resnul[j];
+            }
+            if (res == 3) document.getElementById("resnull").style.visibility = "visible";
+            else document.getElementById("resnull").style.visibility = "hidden";
+            for (j = 0; j < resnul.length; j++) {
+                resnul[j] = 0;
+            }
+        }
+
+
+
+
+
+        /*------------------------AFFICHAGE TABS----------------------*/
+
+        var affichepas = function () {
+            recherche.classList.add("hide");
+            document.getElementById("listetrip").style.padding = "150px 95px 0px 95px";
+            document.getElementById("listetrip").style.height = "84vh";
+            document.getElementById("resnull").style.visibility = "hidden";
+        }
+
+        carte1.addEventListener('click', function () {
+            circuit1.classList.remove("hide");
+            circuit1.classList.remove("pad");
+            circuit2.classList.add("hide");
+            circuit2.classList.add("pad");
+            circuit3.classList.add("hide");
+            circuit3.classList.add("pad");
+            affichepas();
+        });
+
+        carte2.addEventListener('click', function () {
+            circuit2.classList.remove("hide");
+            circuit2.classList.remove("pad");
+            circuit1.classList.add("hide");
+            circuit1.classList.add("pad");
+            circuit3.classList.add("hide");
+            circuit3.classList.add("pad");
+            affichepas();
+        });
+
+        carte3.addEventListener('click', function () {
+            circuit3.classList.remove("hide");
+            circuit3.classList.remove("pad");
+            circuit1.classList.add("hide");
+            circuit1.classList.add("pad");
+            circuit2.classList.add("hide");
+            circuit2.classList.add("pad");
+            affichepas();
+        });
+
+        /*--------------------------------------------------------*/
+
+        /*------------------------AFFICHAGE DES CIRCUITS----------------------*/
+        bt_anpm.addEventListener('click', function () {
+            carte1.classList.remove("hide");
+            carte1.classList.remove("pad");
+            carte2.classList.add("hide");
+            carte2.classList.add("pad");
+            carte3.classList.add("hide");
+            carte3.classList.add("pad");
+            affichepas();
+        });
+
+        bt_dc.addEventListener('click', function () {
+            carte2.classList.remove("hide");
+            carte2.classList.remove("pad");
+            carte1.classList.add("hide");
+            carte1.classList.add("pad");
+            carte3.classList.add("hide");
+            carte3.classList.add("pad");
+            affichepas();
+        });
+
+        bt_df.addEventListener('click', function () {
+            carte3.classList.remove("hide");
+            carte3.classList.remove("pad");
+            carte1.classList.add("hide");
+            carte1.classList.add("pad");
+            carte2.classList.add("hide");
+            carte2.classList.add("pad");
+            affichepas();
+        });
+
+        bt_vg.addEventListener('click', function () {
+            carte1.classList.remove("hide");
+            carte1.classList.remove("pad");
+            carte2.classList.remove("hide");
+            carte2.classList.remove("pad");
+            carte3.classList.remove("hide");
+            carte3.classList.remove("pad");
+            affichepas();
+        });
+        /*--------------------------------------------------------*/
+
+
+        /*------------------------MODAL----------------------*/
+        var myFunction = function () {
+            modal.style.display = "block";
+        };
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', myFunction, false);
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
